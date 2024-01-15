@@ -8,22 +8,20 @@ public class Ball extends Rectangle{
 	Random random;
 	int xVelocity;
 	int yVelocity;
-	int initialSpeed = 5;
+	int initialSpeed = 2;
 	
-	Ball(int x, int y, int widht, int height){
-		super(x, y, widht, height);
+	Ball(int x, int y, int width, int height){
+		super(x,y,width,height);
 		random = new Random();
 		int randomXDirection = random.nextInt(2);
-		if(randomXDirection == 0) {
+		if(randomXDirection == 0)
 			randomXDirection--;
-		setXDirection(randomXDirection * initialSpeed)	;
-		}
+		setXDirection(randomXDirection*initialSpeed);
 		
 		int randomYDirection = random.nextInt(2);
-		if(randomYDirection == 0) {
+		if(randomYDirection == 0)
 			randomYDirection--;
-		setYDirection(randomYDirection * initialSpeed)	;
-		}
+		setYDirection(randomYDirection*initialSpeed);
 		
 	}
 	
@@ -40,8 +38,10 @@ public class Ball extends Rectangle{
 	}
 	
 	public void move() {
+		
 		x += xVelocity;
 		y += yVelocity;
+		
 	}
 	
 	public void draw(Graphics g) {
